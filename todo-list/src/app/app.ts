@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { TaskInput } from './task-input/task-input';
+import { TaskList } from './task-list/task-list';
 
 interface Task {
   id: number,
@@ -9,20 +11,16 @@ interface Task {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,FormsModule],
+  imports: [RouterOutlet, FormsModule, TaskInput, TaskList],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   protected title = 'TODO-LIST';
 
-  tasks: Task[] = [{ id: 1, descripcion: 'tarea1' }]
+  tasks: Task[] = []
 
-  descripcion = '';
-
-  agregarTarea() {
-    const texto = this.descripcion.trim();
-
+  agregarTarea(texto: string) {
     if (texto) {
       const nuevaTarea: Task = {
         id: this.tasks.length + 1,
@@ -32,7 +30,7 @@ export class App {
     }
   }
 
-  completarTarea(id:number){
-     this.tasks = this.tasks.filter(task => task.id !== id);
+  completarTarea(id: number) {
+    this.tasks = this.tasks.filter(task => task.id !== id);
   }
 }

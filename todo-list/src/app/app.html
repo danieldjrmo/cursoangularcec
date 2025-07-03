@@ -1,0 +1,30 @@
+<main class="main">
+  <div class="content">
+    <div class="left-side">
+      <div>{{title}}</div>
+      <input [(ngModel)]="descripcion" placeholder="Nueva tarea" />
+      <button (click)="agregarTarea()">Agregar</button>
+      <table style="border:1">
+        <thead>
+          <tr>
+            <th>Tarea</th>
+            <th>Completada</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (task of tasks; track task.id) {
+            <tr>
+              <td>{{ task.descripcion }}</td>
+              <td>
+                <button (click)="completarTarea(task.id)">Eliminar</button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+
+<router-outlet />

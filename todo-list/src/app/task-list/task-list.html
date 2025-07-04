@@ -1,15 +1,11 @@
-<table style="border:1">
-  <thead>
-    <tr>
-      <th>Tarea</th>
-      <th>Completada</th>
-    </tr>
-  </thead>
-  <tbody>
-    @for (task of tasks; track task.id) {
-    <tr>
-      <app-task-item [task]="task" (eliminar)="eliminarTarea($event)"></app-task-item>
-    </tr>
-    }
-  </tbody>
-</table>
+<div style="padding: 8px;">
+  <div style="padding: 10px;">Lista de Tareas</div>
+  <div class="contenedor-fila">
+    <div class="celda">ID</div>
+    <div class="celda">Descripción</div>
+    <div class="celda">Acciones</div>
+  </div>
+  @for (task of tasks; track task.id) {
+  <app-task-item [task]="task" (eliminar)="eliminarTarea($event)"></app-task-item>
+  }
+</div>

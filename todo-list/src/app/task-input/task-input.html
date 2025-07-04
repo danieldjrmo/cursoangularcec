@@ -1,2 +1,5 @@
 <input [(ngModel)]="descripcion" placeholder="Nueva tarea" />
-<button (click)="emitirAgregar()">Agregar</button>
+<button (click)="emitirAgregar()" class="buttonInput">
+    <i class="fa-regular fa-floppy-disk"></i>
+    <fa-icon [icon]="faFloppyDisk" style="margin-right: 6px;"></fa-icon>
+    Agregar</button>

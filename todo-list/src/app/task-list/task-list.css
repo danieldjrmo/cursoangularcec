@@ -1,0 +1,9 @@
+.contenedor-fila {
+  display: flex;
+ 
+}
+.celda{
+     border:1px solid;
+     padding:8px;
+     width: 250px;
+}

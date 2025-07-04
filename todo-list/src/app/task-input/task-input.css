@@ -1,0 +1,12 @@
+.buttonInput {
+    background-color: rgb(192, 216, 216);
+    width: 150px;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid gray;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    margin-left: 5px;
+
+    font-weight: bold;
+}

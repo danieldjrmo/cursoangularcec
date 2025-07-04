@@ -1,6 +1,9 @@
-
-  <td>{{ task.id }}</td>
-  <td>{{ task.descripcion }}</td>
-  <td>
-    <button (click)="emitirEliminar(task.id)">Eliminar</button>
-  </td>
+<div class="contenedor-fila">
+  <div class="celda">{{ task.id }}</div>
+  <div class="celda">{{ task.descripcion }}</div>
+  <div class="celda">
+    <button (click)="emitirEliminar(task.id)" class="buttonInput">
+  <fa-icon [icon]="faCheck" style="margin-right:6px;"></fa-icon>
+      Eliminar</button>
+  </div>
+</div>

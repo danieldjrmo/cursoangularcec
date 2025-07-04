@@ -1,18 +1,15 @@
-      <table style="border:1">
-        <thead>
-          <tr>
-            <th>Tarea</th>
-            <th>Completada</th>
-          </tr>
-        </thead>
-        <tbody>
-          @for (task of tasks; track task.id) {
-          <tr>
-            <app-task-item [id]="task.id" [descripcion]="task.descripcion"></app-task-item>
-            <td>
-               <button (click)="eliminarTarea(task.id)">Eliminar</button>
-            </td>
-          </tr>
-          }
-        </tbody>
-      </table>
+<table style="border:1">
+  <thead>
+    <tr>
+      <th>Tarea</th>
+      <th>Completada</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (task of tasks; track task.id) {
+    <tr>
+      <app-task-item [task]="task" (eliminar)="eliminarTarea($event)"></app-task-item>
+    </tr>
+    }
+  </tbody>
+</table>

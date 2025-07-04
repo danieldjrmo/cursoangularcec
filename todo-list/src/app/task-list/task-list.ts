@@ -13,11 +13,11 @@ interface Task {
   styleUrl: './task-list.css'
 })
 export class TaskList {
- @Input() tasks: Task[] = [];
-
- @Output() eliminar = new EventEmitter<number>();
+  @Input() tasks: Task[] = [];
+  @Output() eliminar = new EventEmitter<number>();
 
   eliminarTarea(id: number) {
     this.eliminar.emit(id);
   }
+
 }

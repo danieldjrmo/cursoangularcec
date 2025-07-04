@@ -17,7 +17,7 @@ export class TaskInput {
     const texto = this.descripcion.trim();
     if (texto) {
       this.agregar.emit(texto);
-      this.descripcion = '';  // limpiar input
+      this.descripcion = '';  
     }
   }
 }

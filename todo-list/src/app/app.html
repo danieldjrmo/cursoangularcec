@@ -3,7 +3,7 @@
     <div class="left-side">
       <div>{{title}}</div>
       <app-task-input (agregar)="agregarTarea($event)"></app-task-input>
-      <app-task-list [tasks]="tasks" (eliminar)="completarTarea($event)"></app-task-list>
+      <app-task-list [tasks]="tasks" (eliminar)="eliminarTarea($event)"> </app-task-list>
     </div>
   </div>
 </main>

@@ -25,12 +25,15 @@ export class App {
       const nuevaTarea: Task = {
         id: this.tasks.length + 1,
         descripcion: texto,
+          
       };
-      this.tasks.push(nuevaTarea);
+   
+     this.tasks = [...this.tasks, nuevaTarea];
     }
   }
 
-  completarTarea(id: number) {
+  eliminarTarea(id: number) {
     this.tasks = this.tasks.filter(task => task.id !== id);
   }
+ 
 }

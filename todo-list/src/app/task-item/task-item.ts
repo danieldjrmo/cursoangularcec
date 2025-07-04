@@ -1,6 +1,9 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-
+interface Task {
+  id: number;
+  descripcion: string;
+}
 
 @Component({
   selector: 'app-task-item',
@@ -9,7 +12,13 @@ import { Component, Input, Output } from '@angular/core';
   styleUrl: './task-item.css'
 })
 export class TaskItem {
-  @Input() id!: number;
-  @Input() descripcion!: string;
+  @Input() task!: Task;
+
+    @Output() eliminar = new EventEmitter<number>();
+
+    emitirEliminar (id:number){
+      this.eliminar.emit(id)
+    }
+
 
 }
